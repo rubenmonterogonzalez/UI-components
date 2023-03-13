@@ -1,9 +1,9 @@
-import Button from "./ui/Button/Button"
+import AppRouter from './router/AppRouter'
 
 const App = () => {
   return (
     <>
-      <Button buttonText={"button"} />
+      <AppRouter />
     </>
   )
 }
