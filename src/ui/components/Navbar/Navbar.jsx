@@ -2,7 +2,7 @@ import Button from '../Button/Button'
 
 const Navbar = () => {
   return (
-    <header className="bg-white h-16">
+    <header className="bg-white h-16 absolute top-0 left-20 w-[90%]">
       <nav className='flex p-6'>
         <h1 className="font-bold text-3xl">LOGO</h1>
         <ul className='flex ml-auto'>

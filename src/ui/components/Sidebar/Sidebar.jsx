@@ -4,13 +4,14 @@ const Sidebar = () => {
   const [isOpen, setIsopen] = useState(false);
 
   const ToggleSidebar = () => {
-    console.log("clicked")
+    console.log(isOpen)
     isOpen === true ? setIsopen(false) : setIsopen(true);
   }
 
   return (
     <>
-      <nav className="z-10 w-20 max-w-[4rem] h-screen fixed flex flex-col justify-between">
+      <nav className={`sidebar ${isOpen == true ? 'active z-10 w-80 max-w-[20%] h-screen fixed flex flex-col' : 'z-10 w-20 max-w-[4rem] h-screen fixed flex flex-col'}`}
+      >
         <div className="p-4">
           <div className="flex items-center justify-center mb-7">
             <a className="hidden" href="#">
@@ -62,12 +63,12 @@ const Sidebar = () => {
           </ul>
         </div>
 
-        <div className="flex items-center justify-center py-2 px-4">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col items-center justify-center py-2 px-4 gap-6">
+          <div className="flex items-center justify-center">
             <i className="fas fa-solid fa-user-secret"></i>
             <div className="user-details">
-              <h3 className="user-name">Eleanor Pena</h3>
-              <p className="user-occupation">Veterinary</p>
+              <h3 className="hidden">Eleanor Pena</h3>
+              <p className="hidden">Veterinary</p>
             </div>
           </div>
           <a className="logout-btn" href="#">
