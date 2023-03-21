@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Menu } from 'react-daisyui'
 
 const Sidebar = () => {
@@ -6,16 +6,21 @@ const Sidebar = () => {
 
   const ToggleSidebar = () => {
     isOpen === true ? setIsopen(false) : setIsopen(true);
+    // setIsopen(!isOpen)
   }
+
+  const closeSidebar = () => {
+    setIsopen(false);
+  };
 
   return (
     <>
-      <div className={`sidebar ${isOpen == true ? 'active backdrop-blur-md p-4 component-preview z-10 w-full h-screen fixed flex translate-x-0 transition-opacity ease-in-out top-0 delay-150 duration-300 peer-focus:left-0' : 'translate-x-0 bg-black flex w-20 h-screen p-4 component-preview'}`}>
-        <Menu>
+      <div className={`sidebar ${isOpen == true ? 'active backdrop-blur-md component-preview z-10 w-full h-screen fixed flex translate-x-0 transition-opacity ease-in-out top-0 delay-150 duration-300 peer-focus:left-0' : 'translate-x-0 bg-black flex w-20 h-screen component-preview'}`}>
+        <Menu className='bg-[#2a303c] p-4'>
           <Menu.Item className="flex mb-7">
             <button
               onClick={ToggleSidebar}
-              className="navbar-toggler peer">
+              className="navbar-toggler">
               <i className='fas fa-solid fa-bars'></i>
             </button>
           </Menu.Item>
@@ -50,7 +55,7 @@ const Sidebar = () => {
             </a>
           </Menu.Item>
           <Menu.Item className='mt-auto'>
-            <a className="logout-btn flex gap-4 font-medium h-12" href="#">
+            <a className="flex gap-4 font-medium h-12" href="#">
               <i className="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
               <span className={`${isOpen == true ? '' : 'hidden'}`}>Logout</span>
             </a>

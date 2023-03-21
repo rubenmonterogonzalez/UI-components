@@ -7,14 +7,14 @@ import Accordion from '../components/Accordion/Accordion'
 
 const Layout = ({ children }) => {
   return (
-    <>
-      {/* <Navbar /> */}
+    <div>
+      <Navbar />
       <Sidebar />
       <Container>
         { children }
       </Container>
-      {/* <Footer /> */}
-    </>
+      <Footer />
+    </div>
   )
 }
 
