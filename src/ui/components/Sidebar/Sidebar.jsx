@@ -1,81 +1,69 @@
 import { useState } from 'react'
+import { Menu } from 'react-daisyui'
 
 const Sidebar = () => {
   const [isOpen, setIsopen] = useState(false);
 
   const ToggleSidebar = () => {
-    console.log(isOpen)
     isOpen === true ? setIsopen(false) : setIsopen(true);
   }
 
   return (
     <>
-      <nav className={`sidebar ${isOpen == true ? 'active z-10 w-80 max-w-[20%] h-screen fixed flex flex-col' : 'z-10 w-20 max-w-[4rem] h-screen fixed flex flex-col'}`}
-      >
-        <div className="p-4">
-          <div className="flex items-center justify-center mb-7">
-            <a className="hidden" href="#">
-              <i className="fas fa-shield-dog"></i>
-            </a>
+      <div className={`sidebar ${isOpen == true ? 'active backdrop-blur-md p-4 component-preview z-10 w-full h-screen fixed flex translate-x-0 transition-opacity ease-in-out top-0 delay-150 duration-300 peer-focus:left-0' : 'translate-x-0 bg-black flex w-20 h-screen p-4 component-preview'}`}>
+        <Menu>
+          <Menu.Item className="flex mb-7">
             <button
               onClick={ToggleSidebar}
-              className="navbar-toggler">
+              className="navbar-toggler peer">
               <i className='fas fa-solid fa-bars'></i>
             </button>
-          </div>
+          </Menu.Item>
+          <Menu.Item>
+            <a className="flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-solid fa-table"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Dashboard</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item>
+            <a className="flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-solid fa-paw"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Pets</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item>
+            <a className="flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-solid fa-user"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Customers</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item>
+            <a className="flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-regular fa-stethoscope"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Vets</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item>
+            <a className="flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-duotone fa-gear"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Settings</span>
+            </a>
+          </Menu.Item>
+          <Menu.Item className='mt-auto'>
+            <a className="logout-btn flex gap-4 font-medium h-12" href="#">
+              <i className="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Logout</span>
+            </a>
+          </Menu.Item>
+        </Menu>
+      </div>
 
-          <input type="search" name="search" placeholder="Search..."
-            className="w-full mx-auto p-4 rounded-lg mb-5" />
-
-          <i id='icon-search' className="fas fa-regular fa-magnifying-glass absolute text-xl top-16 left-6"></i>
-
-          <ul className="flex flex-col items-center gap-6 w-full">
-            <li className="w-full">
-              <a className="flex items-center justify-center gap-3 font-medium" href="#">
-                <i className="fas fa-solid fa-table"></i>
-                <span className="hidden">Dashboard</span>
-              </a>
-            </li>
-            <li className="w-full">
-              <a className="flex items-center justify-center gap-3 font-medium" href="#">
-                <i className="fas fa-solid fa-paw"></i>
-                <span className="hidden">Pets</span>
-              </a>
-            </li>
-            <li className="w-full">
-              <a className="flex items-center justify-center gap-3 font-medium" href="#">
-                <i className="fas fa-solid fa-user"></i>
-                <span className="hidden">Customers</span>
-              </a>
-            </li>
-            <li className="w-full">
-              <a className="flex items-center justify-center gap-3 font-medium" href="#">
-                <i className="fas fa-regular fa-stethoscope"></i>
-                <span className="hidden">Vets</span>
-              </a>
-            </li>
-            <li className="w-full">
-              <a className="flex items-center justify-center gap-3 font-medium" href="#">
-                <i className="fas fa-duotone fa-gear"></i>
-                <span className="hidden">Settings</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col items-center justify-center py-2 px-4 gap-6">
-          <div className="flex items-center justify-center">
-            <i className="fas fa-solid fa-user-secret"></i>
-            <div className="user-details">
-              <h3 className="hidden">Eleanor Pena</h3>
-              <p className="hidden">Veterinary</p>
-            </div>
-          </div>
-          <a className="logout-btn" href="#">
-            <i className="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
-          </a>
-        </div>
-      </nav>
+      {/* 
+      <button class="bg-hamburger peer absolute top-0 m-[14px] ml-5 h-[28px] w-[28px] bg-center bg-no-repeat text-4xl">≡</button>
+      <aside class="fixed top-0 -left-[233px] grid h-full w-[233px] z-10 bg-[#fff] delay-150 duration-300 ease-out peer-focus:left-0">
+        <h1 class="mt-8 text-center text-[13px] font-bold text-[#6164E8]">CHAT CHANNELS</h1>
+      </aside>
+      */}
     </>
   )
 }

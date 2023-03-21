@@ -8,12 +8,12 @@ import Accordion from '../components/Accordion/Accordion'
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Sidebar />
       <Container>
         { children }
       </Container>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
