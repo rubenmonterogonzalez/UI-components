@@ -3,9 +3,9 @@ import Accordion from "../components/Accordion/Accordion"
 const Container = ({ children }) => {
   return (
     <>
-      <div className='p-[3%]'>
+      <section className="absolute top-16 left-20 p-4">
         {children}
-      </div>
+      </section>
     </>
   )
 }

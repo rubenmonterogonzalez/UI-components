@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Menu } from 'react-daisyui'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isOpen, setIsopen] = useState(false);
@@ -9,13 +10,9 @@ const Sidebar = () => {
     // setIsopen(!isOpen)
   }
 
-  const closeSidebar = () => {
-    setIsopen(false);
-  };
-
   return (
     <>
-      <div className={`sidebar ${isOpen == true ? 'active backdrop-blur-md component-preview z-10 w-full h-screen fixed flex translate-x-0 transition-opacity ease-in-out top-0 delay-150 duration-300 peer-focus:left-0' : 'translate-x-0 bg-black flex w-20 h-screen component-preview'}`}>
+      <aside className={`sidebar ${isOpen == true ? 'active backdrop-blur-md component-preview z-10 w-full h-full fixed left-0 flex translate-x-0 transition-opacity ease-in-out top-0 delay-150 duration-300 peer-focus:left-0' : 'translate-x-0 bg-black flex w-20 h-screen component-preview'}`}>
         <Menu className='bg-[#2a303c] p-4'>
           <Menu.Item className="flex mb-7">
             <button
@@ -25,16 +22,16 @@ const Sidebar = () => {
             </button>
           </Menu.Item>
           <Menu.Item>
-            <a className="flex gap-4 font-medium h-12" href="#">
+            <Link className="flex gap-4 font-medium h-12" to="/">
               <i className="fas fa-solid fa-table"></i>
               <span className={`${isOpen == true ? '' : 'hidden'}`}>Dashboard</span>
-            </a>
+            </Link>
           </Menu.Item>
           <Menu.Item>
-            <a className="flex gap-4 font-medium h-12" href="#">
+            <Link className="flex gap-4 font-medium h-12" to="/components">
               <i className="fas fa-solid fa-paw"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Pets</span>
-            </a>
+              <span className={`${isOpen == true ? '' : 'hidden'}`}>Components</span>
+            </Link>
           </Menu.Item>
           <Menu.Item>
             <a className="flex gap-4 font-medium h-12" href="#">
@@ -61,7 +58,7 @@ const Sidebar = () => {
             </a>
           </Menu.Item>
         </Menu>
-      </div>
+      </aside>
 
       {/* 
       <button class="bg-hamburger peer absolute top-0 m-[14px] ml-5 h-[28px] w-[28px] bg-center bg-no-repeat text-4xl">≡</button>
