@@ -24,37 +24,37 @@ const Sidebar = () => {
           <Menu.Item>
             <Link className="flex gap-4 font-medium h-12" to="/">
               <i className="fas fa-solid fa-table"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Dashboard</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Dashboard</span>
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link className="flex gap-4 font-medium h-12" to="/components">
+            <Link className="flex gap-4 font-medium h-12 my-1" to="/components">
               <i className="fas fa-solid fa-paw"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Components</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Components</span>
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <a className="flex gap-4 font-medium h-12" href="#">
+            <a className="flex gap-4 font-medium h-12 my-1" href="#">
               <i className="fas fa-solid fa-user"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Customers</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Customers</span>
             </a>
           </Menu.Item>
           <Menu.Item>
-            <a className="flex gap-4 font-medium h-12" href="#">
+            <a className="flex gap-4 font-medium h-12 my-1" href="#">
               <i className="fas fa-regular fa-stethoscope"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Vets</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Vets</span>
             </a>
           </Menu.Item>
           <Menu.Item>
-            <a className="flex gap-4 font-medium h-12" href="#">
+            <a className="flex gap-4 font-medium h-12 my-1" href="#">
               <i className="fas fa-duotone fa-gear"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Settings</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Settings</span>
             </a>
           </Menu.Item>
           <Menu.Item className='mt-auto'>
             <a className="flex gap-4 font-medium h-12" href="#">
               <i className="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
-              <span className={`${isOpen == true ? '' : 'hidden'}`}>Logout</span>
+              <span className={`${isOpen == true ? '' : 'hidden'}`} onClick={ToggleSidebar}>Logout</span>
             </a>
           </Menu.Item>
         </Menu>
